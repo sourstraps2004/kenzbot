@@ -21,7 +21,7 @@ auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
 auth.set_access_token(ACCESS_TOKEN, ACCESS_TOKEN_SECRET)
 api = tweepy.API(auth)
 
-token = util.prompt_for_user_token(username, scope)
+token = util.prompt_for_user_token(username, scope, SPOTIPY_CLIENT_ID, SPOTIPY_CLIENT_SECRET, SPOTIPY_REDIRECT_URI)
                         
 spotify = spotipy.Spotify(auth=token)
 
@@ -40,7 +40,7 @@ while True:
         else:
             continue
     except spotipy.client.SpotifyException:
-        token = util.prompt_for_user_token(username, scope)
+        token = util.prompt_for_user_token(username, scope, SPOTIPY_CLIENT_ID, SPOTIPY_CLIENT_SECRET, SPOTIPY_REDIRECT_URI)
 
         spotify = spotipy.Spotify(auth=token)
     except (tweepy.TweepError, TypeError) as e:
@@ -61,7 +61,7 @@ while True:
        else:
            continue
     except spotipy.client.SpotifyException:
-         token = util.prompt_for_user_token(username, scope)
+         token = util.prompt_for_user_token(username, scope, SPOTIPY_CLIENT_ID, SPOTIPY_CLIENT_SECRET, SPOTIPY_REDIRECT_URI)
          
          spotify = spotipy.Spotify(auth=token)
     except (tweepy.TweepError, TypeError)as e:
