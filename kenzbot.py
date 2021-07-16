@@ -6,9 +6,9 @@ import spotipy.util as util
 scope = 'user-read-currently-playing'
 username = 'supalups'
 PORT_NUMBER = 8888
-SPOTIPY_CLIENT_ID='2b5a2c9b01e4426196eeae9d07b352f7'
-SPOTIPY_CLIENT_SECRET='9caece9efd8f40848d318886a1d018f5'
-SPOTIPY_REDIRECT_URI='http://localhost:8888/callback/'
+SPOTIPY_CLIENT_ID = '2b5a2c9b01e4426196eeae9d07b352f7'
+SPOTIPY_CLIENT_SECRET = '9caece9efd8f40848d318886a1d018f5'
+SPOTIPY_REDIRECT_URI = 'http://localhost:8888/callback/'
 
 token = util.prompt_for_user_token(username, scope, SPOTIPY_CLIENT_ID, SPOTIPY_CLIENT_SECRET, SPOTIPY_REDIRECT_URI)
 
