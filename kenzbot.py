@@ -2,6 +2,7 @@ import tweepy
 import sys
 import spotipy
 import spotipy.util as util
+from spotipy.oauth2 import SpotifyOAuth
 
 
 CONSUMER_KEY = 'L0viSyy7gDWP0kEVeUtNUpDm6'
@@ -13,9 +14,12 @@ scope = 'user-read-currently-playing'
 auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
 auth.set_access_token(ACCESS_TOKEN, ACCESS_TOKEN_SECRET)
 api = tweepy.API(auth)
-token = util.prompt_for_user_token(username,scope,client_id='2b5a2c9b01e4426196eeae9d07b352f7',client_secret='da168907b423478d90fed2ae4326de0a',redirect_uri='http://localhost:8888/callback')
-                        
-spotify = spotipy.Spotify(auth=token)
+
+spotify = spotipy.Spotify(auth_manager=SpotifyOAuth(username='supalups',
+                                                    scope='user-read-currently-playing',
+                                                    client_id='2b5a2c9b01e4426196eeae9d07b352f7',
+                                                    client_secret='da168907b423478d90fed2ae4326de0a',
+                                                    redirect_uri='http://localhost:8888/callback'))
 
 while True:
     try:
@@ -32,8 +36,11 @@ while True:
         else:
             continue
     except spotipy.client.SpotifyException:
-        token = util.prompt_for_user_token(username,scope,client_id='2b5a2c9b01e4426196eeae9d07b352f7',client_secret='da168907b423478d90fed2ae4326de0a',redirect_uri='https://api.spotify.com/v1/me/player/currently-playing')
-        spotify = spotipy.Spotify(auth=token)
+        spotify = spotipy.Spotify(auth_manager=SpotifyOAuth(username='supalups',
+                                                              scope='user-read-currently-playing',
+                                                              client_id='2b5a2c9b01e4426196eeae9d07b352f7',
+                                                              client_secret='da168907b423478d90fed2ae4326de0a',
+                                                              redirect_uri='http://localhost:8888/callback'))
     except (tweepy.TweepError, TypeError) as e:
         pass
 
@@ -52,7 +59,10 @@ while True:
        else:
            continue
     except spotipy.client.SpotifyException:
-         token = util.prompt_for_user_token(username,scope,client_id='2b5a2c9b01e4426196eeae9d07b352f7',client_secret='da168907b423478d90fed2ae4326de0a',redirect_uri='http://localhost:8888/callback')       
-         spotify = spotipy.Spotify(auth=token)
+         spotify = spotipy.Spotify(auth_manager=SpotifyOAuth(username='supalups',
+                                                               scope='user-read-currently-playing',
+                                                               client_id='2b5a2c9b01e4426196eeae9d07b352f7',
+                                                               client_secret='da168907b423478d90fed2ae4326de0a',
+                                                               redirect_uri='http://localhost:8888/callback'))
     except (tweepy.TweepError, TypeError)as e:
          pass                                                                     
