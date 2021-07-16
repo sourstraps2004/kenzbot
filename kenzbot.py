@@ -6,11 +6,8 @@ import spotipy.util as util
 scope = 'user-read-currently-playing'
 username = 'supalups'
 PORT_NUMBER = 8888
-SPOTIPY_CLIENT_ID = '2b5a2c9b01e4426196eeae9d07b352f7'
-SPOTIPY_CLIENT_SECRET = '9caece9efd8f40848d318886a1d018f5'
-SPOTIPY_REDIRECT_URI = 'http://localhost:8888/callback/'
 
-token = util.prompt_for_user_token(username, scope, SPOTIPY_CLIENT_ID, SPOTIPY_CLIENT_SECRET, SPOTIPY_REDIRECT_URI)
+token = util.prompt_for_user_token(username, scope, '2b5a2c9b01e4426196eeae9d07b352f7', '9caece9efd8f40848d318886a1d018f5', 'http://localhost:8888/callback/')
 
 CONSUMER_KEY = 'L0viSyy7gDWP0kEVeUtNUpDm6'
 CONSUMER_SECRET = 'gikgZo9fwIovRYL0D2KWqOhN6omW8eEm7Go89cV4mWD5zCyMcR'
@@ -21,7 +18,7 @@ auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
 auth.set_access_token(ACCESS_TOKEN, ACCESS_TOKEN_SECRET)
 api = tweepy.API(auth)
 
-token = util.prompt_for_user_token(username, scope, SPOTIPY_CLIENT_ID, SPOTIPY_CLIENT_SECRET, SPOTIPY_REDIRECT_URI)
+token = util.prompt_for_user_token(username, scope, '2b5a2c9b01e4426196eeae9d07b352f7', '9caece9efd8f40848d318886a1d018f5', 'http://localhost:8888/callback/')
                         
 spotify = spotipy.Spotify(auth=token)
 
@@ -40,7 +37,7 @@ while True:
         else:
             continue
     except spotipy.client.SpotifyException:
-        token = util.prompt_for_user_token(username, scope, SPOTIPY_CLIENT_ID, SPOTIPY_CLIENT_SECRET, SPOTIPY_REDIRECT_URI)
+        token = util.prompt_for_user_token(username, scope, '2b5a2c9b01e4426196eeae9d07b352f7', '9caece9efd8f40848d318886a1d018f5', 'http://localhost:8888/callback/')
 
         spotify = spotipy.Spotify(auth=token)
     except (tweepy.TweepError, TypeError) as e:
@@ -61,7 +58,7 @@ while True:
        else:
            continue
     except spotipy.client.SpotifyException:
-         token = util.prompt_for_user_token(username, scope, SPOTIPY_CLIENT_ID, SPOTIPY_CLIENT_SECRET, SPOTIPY_REDIRECT_URI)
+         token = util.prompt_for_user_token(username, scope, '2b5a2c9b01e4426196eeae9d07b352f7', '9caece9efd8f40848d318886a1d018f5', 'http://localhost:8888/callback/')
          
          spotify = spotipy.Spotify(auth=token)
     except (tweepy.TweepError, TypeError)as e:
