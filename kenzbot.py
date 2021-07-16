@@ -1,6 +1,6 @@
 import tweepy
 import sys
-import os import environ
+from os import environ
 import spotipy
 import spotipy.util as util
 
