@@ -12,7 +12,7 @@ auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
 auth.set_access_token(ACCESS_TOKEN, ACCESS_TOKEN_SECRET)
 api = tweepy.API(auth)
 
-token = util.prompt_for_user_token(username='supalups', scope='user-read-currently-playing',client_id='2b5a2c9b01e4426196eeae9d07b352f7',client_secret='da168907b423478d90fed2ae4326de0a',redirect_uri=='http://localhost:8888/callback/')
+token = util.prompt_for_user_token(username='supalups',scope='user-read-currently-playing',client_id='2b5a2c9b01e4426196eeae9d07b352f7',client_secret='da168907b423478d90fed2ae4326de0a',redirect_uri=='http://localhost:8888/callback/')
                         
 spotify = spotipy.Spotify(auth=token)
 
@@ -31,7 +31,7 @@ while True:
         else:
             continue
     except spotipy.client.SpotifyException:
-        token = util.prompt_for_user_token(username='supalups', scope='user-read-currently-playing',client_id='2b5a2c9b01e4426196eeae9d07b352f7',client_secret='da168907b423478d90fed2ae4326de0a',redirect_uri=='http://localhost:8888/callback/')
+        token = util.prompt_for_user_token(username='supalups',scope='user-read-currently-playing',client_id='2b5a2c9b01e4426196eeae9d07b352f7',client_secret='da168907b423478d90fed2ae4326de0a',redirect_uri=='http://localhost:8888/callback/')
 
         spotify = spotipy.Spotify(auth=token)
     except (tweepy.TweepError, TypeError) as e:
@@ -52,7 +52,7 @@ while True:
        else:
            continue
     except spotipy.client.SpotifyException:
-         token = util.prompt_for_user_token(username='supalups', scope='user-read-currently-playing',client_id='2b5a2c9b01e4426196eeae9d07b352f7',client_secret='da168907b423478d90fed2ae4326de0a',redirect_uri=='http://localhost:8888/callback/')
+         token = util.prompt_for_user_token(username='supalups',scope='user-read-currently-playing',client_id='2b5a2c9b01e4426196eeae9d07b352f7',client_secret='da168907b423478d90fed2ae4326de0a',redirect_uri=='http://localhost:8888/callback/')
          
          spotify = spotipy.Spotify(auth=token)
     except (tweepy.TweepError, TypeError)as e:
