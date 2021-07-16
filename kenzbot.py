@@ -3,15 +3,6 @@ import sys
 import spotipy
 import spotipy.util as util
 
-scope = 'user-read-currently-playing'
-username = 'supalups'
-PORT_NUMBER = 8888
-SPOTIPY_CLIENT_ID='2b5a2c9b01e4426196eeae9d07b352f7'
-SPOTIPY_CLIENT_SECRET='9caece9efd8f40848d318886a1d018f5'
-SPOTIPY_REDIRECT_URI='http://localhost:8888/callback/'
-
-token = util.prompt_for_user_token(username, scope)
-
 CONSUMER_KEY = 'L0viSyy7gDWP0kEVeUtNUpDm6'
 CONSUMER_SECRET = 'gikgZo9fwIovRYL0D2KWqOhN6omW8eEm7Go89cV4mWD5zCyMcR'
 ACCESS_TOKEN = '1378616618759098368-bP2pcOlX1rIbpnTNFRr22VrIB9extz'
@@ -21,7 +12,7 @@ auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
 auth.set_access_token(ACCESS_TOKEN, ACCESS_TOKEN_SECRET)
 api = tweepy.API(auth)
 
-token = util.prompt_for_user_token(username, scope)
+token = util.prompt_for_user_token(username='supalups', scope='user-read-currently-playing',client_id='2b5a2c9b01e4426196eeae9d07b352f7',client_secret='da168907b423478d90fed2ae4326de0a',redirect_uri=='http://localhost:8888/callback/')
                         
 spotify = spotipy.Spotify(auth=token)
 
@@ -40,7 +31,7 @@ while True:
         else:
             continue
     except spotipy.client.SpotifyException:
-        token = util.prompt_for_user_token(username, scope)
+        token = util.prompt_for_user_token(username='supalups', scope='user-read-currently-playing',client_id='2b5a2c9b01e4426196eeae9d07b352f7',client_secret='da168907b423478d90fed2ae4326de0a',redirect_uri=='http://localhost:8888/callback/')
 
         spotify = spotipy.Spotify(auth=token)
     except (tweepy.TweepError, TypeError) as e:
@@ -61,7 +52,7 @@ while True:
        else:
            continue
     except spotipy.client.SpotifyException:
-         token = util.prompt_for_user_token(username, scope)
+         token = util.prompt_for_user_token(username='supalups', scope='user-read-currently-playing',client_id='2b5a2c9b01e4426196eeae9d07b352f7',client_secret='da168907b423478d90fed2ae4326de0a',redirect_uri=='http://localhost:8888/callback/')
          
          spotify = spotipy.Spotify(auth=token)
     except (tweepy.TweepError, TypeError)as e:
