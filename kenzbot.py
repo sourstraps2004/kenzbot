@@ -6,11 +6,11 @@ import spotipy.util as util
 scope = 'user-read-currently-playing'
 username = 'supalups'
 PORT_NUMBER = 8888
-export SPOTIPY_CLIENT_ID = '2b5a2c9b01e4426196eeae9d07b352f7'
-export SPOTIPY_CLIENT_SECRET = '9caece9efd8f40848d318886a1d018f5'
-export SPOTIPY_REDIRECT_URI = 'http://localhost:8888/callback/'
+SPOTIPY_CLIENT_ID='2b5a2c9b01e4426196eeae9d07b352f7'
+SPOTIPY_CLIENT_SECRET='9caece9efd8f40848d318886a1d018f5'
+SPOTIPY_REDIRECT_URI='http://localhost:8888/callback/'
 
-token = util.prompt_for_user_token(username, scope, '2b5a2c9b01e4426196eeae9d07b352f7', '9caece9efd8f40848d318886a1d018f5', 'http://localhost:8888/callback/')
+token = util.prompt_for_user_token(username, scope, SPOTIPY_CLIENT_ID, SPOTIPY_CLIENT_SECRET, SPOTIPY_REDIRECT_URI)
 
 CONSUMER_KEY = 'L0viSyy7gDWP0kEVeUtNUpDm6'
 CONSUMER_SECRET = 'gikgZo9fwIovRYL0D2KWqOhN6omW8eEm7Go89cV4mWD5zCyMcR'
@@ -33,7 +33,7 @@ while True:
         if current_track_id is not None:
     
 
-            api.update_status("jelly music" + ":" + '\n' + current_track['item']['artists'][0]['name'] + " - " +
+            api.update_status("jelly's currently listening to" + ":" + '\n' + current_track['item']['artists'][0]['name'] + " - " +
                                                                     current_track['item']['name'] + '\n' + str(
                                                                     current_track['item']['external_urls']['spotify']))
             break
@@ -54,7 +54,7 @@ while True:
        if current_track_id is not None and new_track_id != current_track_id:
 
                                                                                      
-           api.update_status("jelly music" + ":" + '\n' + new_track['item']['artists'][0]['name'] + " - " +
+           api.update_status("jelly's currently listening to" + ":" + '\n' + new_track['item']['artists'][0]['name'] + " - " +
                                                   new_track['item']['name'] + '\n' + str(
                                                   new_track['item']['external_urls']['spotify']))
            current_track_id = new_track_id
@@ -65,4 +65,4 @@ while True:
          
          spotify = spotipy.Spotify(auth=token)
     except (tweepy.TweepError, TypeError)as e:
-         pass                                                                         
+         pass                                                                     
