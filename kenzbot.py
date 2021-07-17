@@ -5,10 +5,10 @@ import spotipy.util as util
 from spotipy.oauth2 import SpotifyOAuth
 
 
-CONSUMER_KEY = 'L0viSyy7gDWP0kEVeUtNUpDm6'
-CONSUMER_SECRET = 'gikgZo9fwIovRYL0D2KWqOhN6omW8eEm7Go89cV4mWD5zCyMcR'
-ACCESS_TOKEN = '1378616618759098368-bP2pcOlX1rIbpnTNFRr22VrIB9extz'
-ACCESS_TOKEN_SECRET = 'k1JA4bIZsJopxiYfsrFQFqXXJmvXLOGSs7Tuz26I0svP8'
+CONSUMER_KEY = 'UoJlbpt613XnmdcsRSsn0BWLE'
+CONSUMER_SECRET = 'AlSQAqf8oN5hWw5cO8ULHCEZLiXb7GSp1fFCgNtJBYHlITSeGA'
+ACCESS_TOKEN = '1416230931220910088-BEAawnb5u5eh2vqncF7zlVBLFkOEFc'
+ACCESS_TOKEN_SECRET = '6LqNf9wKQnhg8fSoIHTukKuKVAtuKWOmforGm36TRljWR'
 username = 'supalups'
 scope = 'user-read-currently-playing'
 auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
