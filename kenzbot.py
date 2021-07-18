@@ -5,10 +5,10 @@ import spotipy.util as util
 from spotipy.oauth2 import SpotifyOAuth
 
 
-CONSUMER_KEY = 'UoJlbpt613XnmdcsRSsn0BWLE'
-CONSUMER_SECRET = 'AlSQAqf8oN5hWw5cO8ULHCEZLiXb7GSp1fFCgNtJBYHlITSeGA'
-ACCESS_TOKEN = '1416230931220910088-BEAawnb5u5eh2vqncF7zlVBLFkOEFc'
-ACCESS_TOKEN_SECRET = '6LqNf9wKQnhg8fSoIHTukKuKVAtuKWOmforGm36TRljWR'
+CONSUMER_KEY = 'amrk2xaiX3gvu8GWAQgcTBfND'
+CONSUMER_SECRET = 'CWyDhI9b9iSLKhzXglBtmgp6hpKPTa73CUjHLb9IBzhpj0gKxV'
+ACCESS_TOKEN = '1378616618759098368-P2d0BM0uqGQ0SvFAVyHFEjE4O6cO2F'
+ACCESS_TOKEN_SECRET = 'bL4ORA2fSzMVKmKrRcVCwN38tPzu8bSF1msdqQxMJDQvm'
 username = 'supalups'
 scope = 'user-read-currently-playing'
 auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
@@ -65,4 +65,4 @@ while True:
                                                                client_secret='da168907b423478d90fed2ae4326de0a',
                                                                redirect_uri='http://localhost:8888/callback'))
     except (tweepy.TweepError, TypeError)as e:
-         pass                                                                     
+         pass                                                                    
